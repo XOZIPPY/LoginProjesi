@@ -2,29 +2,128 @@
 <html lang="tr">
 <head>
     <meta charset="UTF-8">
-    <title>Kayıt Ol</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kayıt Ol - XOWIDE</title>
     <link rel="stylesheet" href="style.css">
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: #121212;
+            color: #ffffff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .auth-card {
+            background: #1e1e1e;
+            padding: 40px;
+            border-radius: 12px;
+            border: 1px solid #2d2d2d;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
+            width: 100%;
+            max-width: 400px;
+        }
+
+            .auth-card h2 {
+                margin-bottom: 24px;
+                color: #60a5fa;
+                text-align: center;
+                font-size: 24px;
+            }
+
+        .input-group {
+            margin-bottom: 18px;
+        }
+
+            .input-group label {
+                display: block;
+                margin-bottom: 6px;
+                font-size: 13px;
+                color: #aaa;
+            }
+
+            .input-group input {
+                width: 100%;
+                padding: 12px;
+                background: #121212;
+                border: 1px solid #333;
+                border-radius: 8px;
+                color: #fff;
+                font-size: 14px;
+                outline: none;
+                transition: border-color 0.2s;
+            }
+
+                .input-group input:focus {
+                    border-color: #3b82f6;
+                }
+
+        .btn-submit {
+            width: 100%;
+            padding: 12px;
+            background: #2563eb;
+            color: #fff;
+            border: none;
+            border-radius: 8px;
+            font-weight: bold;
+            font-size: 15px;
+            cursor: pointer;
+            transition: background 0.2s;
+            margin-top: 10px;
+        }
+
+            .btn-submit:hover {
+                background: #1d4ed8;
+            }
+
+        .auth-footer {
+            margin-top: 20px;
+            text-align: center;
+            font-size: 13px;
+            color: #aaa;
+        }
+
+            .auth-footer a {
+                color: #60a5fa;
+                text-decoration: none;
+                font-weight: bold;
+            }
+
+                .auth-footer a:hover {
+                    text-decoration: underline;
+                }
+    </style>
 </head>
 <body>
-    <div class="login-container">
+
+    <div class="auth-card">
         <h2>Kayıt Ol</h2>
-
-        <div id="hata-mesaji" style="display: none; color: red;"></div>
-
-        <form id="registerForm">
-            <div>
-                <label for="regEmail">E-posta:</label>
-                <input type="email" id="regEmail" placeholder="ornek@mail.com" required>
+        <form action="/register" method="POST">
+            <div class="input-group">
+                <label for="email">E-posta</label>
+                <input type="email" id="email" name="email" placeholder="ornek@mail.com" required>
             </div>
-            <div>
-                <label for="regPassword">Şifre:</label>
-                <input type="password" id="regPassword" required>
+
+            <div class="input-group">
+                <label for="password">Şifre</label>
+                <input type="password" id="password" name="password" placeholder="••••••••" required>
             </div>
-            <button type="submit">Kayıt Ol</button>
+
+            <button type="submit" class="btn-submit">Kayıt Ol</button>
         </form>
-        <p>Zaten hesabın var mı? <a href="index.html">Giriş Yap</a></p>
+
+        <div class="auth-footer">
+            Zaten hesabın var mı? <a href="login.html">Giriş Yap</a>
+        </div>
     </div>
 
-    <script src="login.js"></script>
 </body>
 </html>
